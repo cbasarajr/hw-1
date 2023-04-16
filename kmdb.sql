@@ -193,6 +193,9 @@ VALUES ("Warner Bros.", 1, "Batman Begins"),
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT movies.movie_title, movies.year_released, movies.rating, studios.studio_name
+FROM movies INNER JOIN studios ON studios.movie_id = movies.id;
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
