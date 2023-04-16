@@ -114,7 +114,7 @@ DROP TABLE IF EXISTS characters;
 
 CREATE TABLE movies( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
+    movie_title TEXT,
     year_released INTEGER,
     rating TEXT,
  );
@@ -123,11 +123,65 @@ CREATE TABLE actors(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT,
     character_name TEXT,
-    
-)
+    movie_id INTEGER,
+);
+
+CREATE TABLE studios(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    studio_name TEXT,
+    movie_id INTEGER,
+    movie_title TEXT,
+);
+
 
 
 -- Insert data into your database that reflects the sample data shown above
+
+INSERT INTO movies(
+    movie_title,
+    year_released,
+    rating
+);
+
+VALUES ("Batman Begins", 2005, "PG-13"),
+("The Dark Night", 2008, "PG-13"),
+("The Dark Night Rises", 2012, "PG-13")
+;
+
+INSERT INTO actors(
+    actor_name,
+    character_name,
+    movie_id
+);
+
+VALUES ("Christian Bale", "Bruce Wayne", 1),
+("Michael Caine", "Alfred", 1),
+("Liam Neeson", "Ra's Al Ghul", 1),
+("Katie Holmes", "Rachel Dawes", 1),
+("Gary Oldman", "Commissioner Gordon", 1),
+("Christian Bale", "Bruce Wayne", 2),
+("Heath Ledger", "Joker", 2),
+("Aaron Eckhart", "Harvey Dent", 2),
+("Michael Caine", "Alfred", 2),
+("Maggie Gyllenhaal", "Rachel Dawes", 2),
+("Christian Bale", "Bruce Wayne", 3),
+("Gary Oldman", "Commissioner Gordon", 3),
+("Tom Hardy", "Bane", 3),
+("Joseph Gordon-Levitt", "John Blake", 3),
+("Anne Hathaway", "Selina Kyle", 3)
+;
+
+INSERT INTO studios(
+    studio_name,
+    movie_id,
+    movie_title
+);
+
+VALUES ("Warner Bros.", 1, "Batman Begins"),
+("Warner Bros.", 2, "The Dark Night"),
+("Warner Bros.", 3, "The Dark Night Rises")
+;
+
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
