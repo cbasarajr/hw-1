@@ -107,52 +107,52 @@
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS studios;
-DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS actors;
 
 -- Create new tables, according to your domain model
 -- TODO!
 
-CREATE TABLE movies( 
+CREATE TABLE movies ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_title TEXT,
     year_released INTEGER,
-    rating TEXT,
+    rating TEXT
  );
 
-CREATE TABLE actors(
+CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT,
     character_name TEXT,
-    movie_id INTEGER,
+    movie_id INTEGER
 );
 
-CREATE TABLE studios(
+CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     studio_name TEXT,
     movie_id INTEGER,
-    movie_title TEXT,
+    movie_title TEXT
 );
 
 
 
 -- Insert data into your database that reflects the sample data shown above
 
-INSERT INTO movies(
+INSERT INTO movies (
     movie_title,
     year_released,
     rating
-);
+)
 
 VALUES ("Batman Begins", 2005, "PG-13"),
 ("The Dark Night", 2008, "PG-13"),
-("The Dark Night Rises", 2012, "PG-13")
-;
+("The Dark Night Rises", 2012, "PG-13"
+);
 
-INSERT INTO actors(
+INSERT INTO actors (
     actor_name,
     character_name,
     movie_id
-);
+)
 
 VALUES ("Christian Bale", "Bruce Wayne", 1),
 ("Michael Caine", "Alfred", 1),
@@ -168,19 +168,19 @@ VALUES ("Christian Bale", "Bruce Wayne", 1),
 ("Gary Oldman", "Commissioner Gordon", 3),
 ("Tom Hardy", "Bane", 3),
 ("Joseph Gordon-Levitt", "John Blake", 3),
-("Anne Hathaway", "Selina Kyle", 3)
-;
+("Anne Hathaway", "Selina Kyle", 3
+);
 
-INSERT INTO studios(
+INSERT INTO studios (
     studio_name,
     movie_id,
     movie_title
-);
+)
 
 VALUES ("Warner Bros.", 1, "Batman Begins"),
 ("Warner Bros.", 2, "The Dark Night"),
-("Warner Bros.", 3, "The Dark Night Rises")
-;
+("Warner Bros.", 3, "The Dark Night Rises"
+);
 
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
